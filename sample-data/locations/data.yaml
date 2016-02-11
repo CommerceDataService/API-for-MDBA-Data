@@ -1,0 +1,77 @@
+version: MBDA_locations-2014
+# MBDA_locations-2014
+# Scraped data from 2014 MBDA Annual Performance Report
+index: MBDA-location-data
+api: locations
+#unique: ['location_name']
+
+options:
+  search: dictionary_only   # API provides error when requesting fields not in dictionary
+
+dictionary:
+
+  name:
+    source: location_name
+    description: The name of the MBDA location.
+    type: literal
+
+  center.type:
+    source: center_type
+    description: The type of the MBDA location.
+    type: literal
+
+  specialization:
+    source: specialization
+    description: The specialization of the MBDA location.
+    type: literal
+
+  address.line1:
+    source: address
+    description: The address of the MBDA site.
+    type: literal
+
+  address.state:
+    source: state
+    description: The state for the MBDA location.
+    type: literal
+
+  address.city:
+    source: city
+    description: The city of the MBDA location.
+    type: literal
+
+  address.zipcode:
+    source: zipcode
+    description: The zipcode of the MBDA location.
+    type: literal
+
+  address.full:
+    source: full_address
+    description: The full address of the MBDA site.
+    type: literal
+
+  contact.person.name:
+    source: point_of_contact
+    description: The point of contact for the MBDA location.
+    type: literal
+
+  contact.person.phone:
+    source: phone
+    description: The contact phone number for the MBDA location.
+    type: literal
+
+  contact.person.email:
+    source: email
+    description: The email address for the contact person.
+    type: literal
+
+categories:
+  general:
+    title: General
+    description: >
+      general information about the MBDA location.
+    fields: [name, center.type, specialization, address.line1, address.state, address.city, address.zipcode, address.full, contact.person.name, contact.person.phone, contact.person.email]
+
+
+files:
+   - name: MBDA_locations.csv
